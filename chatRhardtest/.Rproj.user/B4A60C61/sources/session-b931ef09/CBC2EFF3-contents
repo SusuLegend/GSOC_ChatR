@@ -1,0 +1,10 @@
+Package: chatRhardtest
+Type: Package
+Title: return R package function using LLM 
+Version: 0.1.0
+Author: Jason Adika Tanuwijaya
+Maintainer: The package maintainer jasonadikatan@gmail.com
+Description:  Uses Ollama (llama3.2:3b) via ellmer to return a list of exported functions from a given R package.
+License: MIT license
+Encoding: UTF-8
+LazyData: true
