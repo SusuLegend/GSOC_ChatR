@@ -1,0 +1,122 @@
+ollama run llama3.2:3b-instruct-Q4_K_M "How do I create R package in native R"
+
+
+Creating an R package from scratch involves several steps. Here's a step-by-step guide to help you create a native
+R package:
+
+**Step 1: Create a new directory for your package**
+
+Create a new directory for your package and navigate into it using the command line or terminal.
+
+```bash
+mkdir mypackage
+cd mypackage
+```
+
+**Step 2: Initialize the package**
+
+Use the `R CMD build` command to initialize the package. This will create a subdirectory called "build" in your
+package directory.
+
+```bash
+R CMD build init_r --build-vendor .
+```
+
+This will create a `DESCRIPTION` file and an empty `R` directory.
+
+**Step 3: Create the R source files**
+
+Create the R source files for your package. These can be functions, data sets, or other R code.
+
+For example, let's say you want to create a function called `my_function()`. You would add it to an R file like
+this:
+
+```r
+# mypackage/R/myfunction.R
+
+my_function <- function(x) {
+  x * 2
+}
+```
+
+**Step 4: Create the documentation**
+
+Create documentation for your package using the `roxygen2` package. This will generate documentation files in the
+"man" directory.
+
+First, install the `roxygen2` package:
+
+```bash
+install.packages("roxygen2")
+```
+
+Then, run the following command to create the documentation:
+
+```r
+R CMD build roxygen2
+```
+
+**Step 5: Create the NAMESPACE file**
+
+Create a `NAMESPACE` file that lists all the R functions and objects in your package.
+
+For example, let's say you want to list the `my_function()` function in your package. You would add it to the
+`NAMESPACE` file like this:
+
+```r
+# mypackage/R/NAMESPACE
+
+export(
+  my_function
+)
+```
+
+**Step 6: Create a vignette (optional)**
+
+Create a vignette for your package using the `vignettes` function.
+
+For example, let's say you want to create a vignette called "Introduction" that introduces your package. You would
+add it to an R file like this:
+
+```r
+# mypackage/R/introduction.R
+
+library(mypackage)
+
+introduction <- function() {
+  cat("Welcome to mypackage!\n")
+}
+```
+
+**Step 7: Build the package**
+
+Finally, use the `R CMD build` command to build your package.
+
+```bash
+R CMD build . --build-vendor
+```
+
+This will create a tarball of your package in the "build" directory.
+
+**Step 8: Test the package**
+
+Test the package by loading it into R and running some example code.
+
+For example, let's say you want to test the `my_function()` function. You would add it to an R file like this:
+
+```r
+# mypackage/R/test.R
+
+library(mypackage)
+
+test_my_function <- function() {
+  result <- my_function(5)
+  cat("Result:", result, "\n")
+}
+
+test_my_function()
+```
+
+This will load your package and run the `my_function()` function.
+
+That's it! You've now created a native R package.
