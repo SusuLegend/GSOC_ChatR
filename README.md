@@ -46,4 +46,13 @@ Solution
 Full Solution in **Medium_Test.R**
 
 ## Hard Test
+Problem Statement :
 
+Create an R package that depends on ellmer and provides a function that takes the name of a package returns a character vector of functions exported by that package by only using ellmer and llama3.2:3b from Ollama. The list of functions does not need to be correct (making it correct is the whole point of this project)
+
+
+Solution :
+
+Use the function from **Medium_Test.R**, improve it using prompt engineering to answer the problem and put it on a R package
+
+Full Solution in **ChatRhardtest.R**
